@@ -1,0 +1,1137 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="20.01" TargetName="P00_SUPPORT_FUNCTIONS" TargetType="Program" ContainsContext="true" Owner="Windows User" ExportDate="Thu Apr 29 09:46:18 2021" ExportOptions="References DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
+<Controller Use="Context" Name="CLX_DAQ">
+<DataTypes Use="Context">
+<DataType Name="STRG_DATIME" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Date and Time
+String Format
+Basic Structure]]>
+</Description>
+<Members>
+<Member Name="YEAR" DataType="STRING" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="MONTH" DataType="STRING" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="DAY" DataType="STRING" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="HOUR" DataType="STRING" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="MINUTE" DataType="STRING" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="SECOND" DataType="STRING" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="FDATE" DataType="STRING" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[FORMATTED DATE
+[YYYY/MM/DD]]]>
+</Description>
+</Member>
+<Member Name="FTIME" DataType="STRING" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[FORMATTED TIME
+[HH:MM:SS]]]>
+</Description>
+</Member>
+</Members>
+</DataType>
+<DataType Name="SUPPORT" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Support Functions
+[Global Application]]]>
+</Description>
+<Members>
+<Member Name="ZZZZZZZZZZSUPPORT0" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>
+<Member Name="Log1" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZSUPPORT0" BitNumber="0" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Logical 1: 
+Always True]]>
+</Description>
+</Member>
+<Member Name="Log0" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZSUPPORT0" BitNumber="1" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Logical 0: 
+Always False]]>
+</Description>
+</Member>
+<Member Name="Ini" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZSUPPORT0" BitNumber="2" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Initialization Bit
+Pulse First Scan]]>
+</Description>
+</Member>
+<Member Name="_2xHz" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZSUPPORT0" BitNumber="3" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Flash Bit
+2 Hz Cycle 
+0.5 Sec Cycle]]>
+</Description>
+</Member>
+<Member Name="_1xHz" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZSUPPORT0" BitNumber="4" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Flash Bit
+1 Hz Cycle 
+1 Sec Cycle]]>
+</Description>
+</Member>
+<Member Name="_05Hz" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZSUPPORT0" BitNumber="5" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Flash Bit
+1/2 Hz Cycle 
+2 Sec Cycle]]>
+</Description>
+</Member>
+<Member Name="Step_1x30" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Base Counter
+1 = [30ms/Count]]]>
+</Description>
+</Member>
+<Member Name="Step_1x50" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Base Counter
+1 = [50ms/Count]]]>
+</Description>
+</Member>
+<Member Name="Step_1x100" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Base Counter
+1 = [100ms/Count]]]>
+</Description>
+</Member>
+<Member Name="Step_1x200" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Base Counter
+1 = [200ms/Count]]]>
+</Description>
+</Member>
+<Member Name="Step_1x500" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Base Counter
+1 = [500ms/Count]]]>
+</Description>
+</Member>
+<Member Name="Step_1x1000" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Base Counter
+1 = [1sec/Count]]]>
+</Description>
+</Member>
+<Member Name="Beacon" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Beacon
+Time Pulse]]>
+</Description>
+</Member>
+<Member Name="Watchdog" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Communication
+Watchdog]]>
+</Description>
+</Member>
+<Member Name="CSSG" DataType="DINT" Dimension="5" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Application
+Commissioning Flags
+[Miscellaneous]]]>
+</Description>
+</Member>
+</Members>
+</DataType>
+<DataType Name="PLC_DATIME" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[PLC Date and Time
+Basic Structure]]>
+</Description>
+<Members>
+<Member Name="YEAR" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="MONTH" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="DAY" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="HOUR" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="MINUTE" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="SECOUND" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="uSECOND" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+</DataTypes>
+<Tags Use="Context">
+<Tag Name="PLC_DTM" TagType="Base" DataType="STRG_DATIME" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[EAF PLC
+ACTUAL CLOCK
+DATE AND TIME
+[STRING FORMAT]]]>
+</Description>
+<Data>04 00 00 00 32 30 32 31 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 02 00 00 00 30 34 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+02 00 00 00 32 38 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 02 00 00 00 32 31 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+02 00 00 00 31 32 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 02 00 00 00 31 33 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+0A 00 00 00 32 30 32 31 2F 30 34 2F 32 38 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 08 00 00 00 32 31 3A 31 
+32 3A 31 33 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00</Data>
+<Data Format="Decorated">
+<Structure DataType="STRG_DATIME">
+<StructureMember Name="YEAR" DataType="STRING">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="4"/>
+<DataValueMember Name="DATA" DataType="STRING" Radix="ASCII">
+<![CDATA['2021']]>
+</DataValueMember>
+</StructureMember>
+<StructureMember Name="MONTH" DataType="STRING">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="2"/>
+<DataValueMember Name="DATA" DataType="STRING" Radix="ASCII">
+<![CDATA['04']]>
+</DataValueMember>
+</StructureMember>
+<StructureMember Name="DAY" DataType="STRING">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="2"/>
+<DataValueMember Name="DATA" DataType="STRING" Radix="ASCII">
+<![CDATA['28']]>
+</DataValueMember>
+</StructureMember>
+<StructureMember Name="HOUR" DataType="STRING">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="2"/>
+<DataValueMember Name="DATA" DataType="STRING" Radix="ASCII">
+<![CDATA['21']]>
+</DataValueMember>
+</StructureMember>
+<StructureMember Name="MINUTE" DataType="STRING">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="2"/>
+<DataValueMember Name="DATA" DataType="STRING" Radix="ASCII">
+<![CDATA['12']]>
+</DataValueMember>
+</StructureMember>
+<StructureMember Name="SECOND" DataType="STRING">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="2"/>
+<DataValueMember Name="DATA" DataType="STRING" Radix="ASCII">
+<![CDATA['13']]>
+</DataValueMember>
+</StructureMember>
+<StructureMember Name="FDATE" DataType="STRING">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="10"/>
+<DataValueMember Name="DATA" DataType="STRING" Radix="ASCII">
+<![CDATA['2021/04/28']]>
+</DataValueMember>
+</StructureMember>
+<StructureMember Name="FTIME" DataType="STRING">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="8"/>
+<DataValueMember Name="DATA" DataType="STRING" Radix="ASCII">
+<![CDATA['21:12:13']]>
+</DataValueMember>
+</StructureMember>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="SIMULATION_ACTIVE" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[APPLICATION
+BASIC SIMULATION
+ENABLE FLAG]]>
+</Description>
+<Data>00</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="PLC_CLK" TagType="Base" DataType="PLC_DATIME" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[EAF PLC
+ACTUAL CLOCK
+DATE AND TIME]]>
+</Description>
+<Data>E5 07 00 00 04 00 00 00 1C 00 00 00 15 00 00 00 
+0C 00 00 00 0E 00 00 00 E0 D4 00 00</Data>
+<Data Format="Decorated">
+<Structure DataType="PLC_DATIME">
+<DataValueMember Name="YEAR" DataType="DINT" Radix="Decimal" Value="2021"/>
+<DataValueMember Name="MONTH" DataType="DINT" Radix="Decimal" Value="4"/>
+<DataValueMember Name="DAY" DataType="DINT" Radix="Decimal" Value="28"/>
+<DataValueMember Name="HOUR" DataType="DINT" Radix="Decimal" Value="21"/>
+<DataValueMember Name="MINUTE" DataType="DINT" Radix="Decimal" Value="12"/>
+<DataValueMember Name="SECOUND" DataType="DINT" Radix="Decimal" Value="14"/>
+<DataValueMember Name="uSECOND" DataType="DINT" Radix="Decimal" Value="54496"/>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="APP" TagType="Base" DataType="SUPPORT" Constant="false" ExternalAccess="Read/Write">
+<Comments>
+<Comment Operand=".BEACON.0">
+<![CDATA[Support Functions
+[Global Application]
+Beacon
+Time Pulse
+1 Second]]>
+</Comment>
+<Comment Operand=".BEACON.1">
+<![CDATA[Support Functions
+[Global Application]
+Beacon
+Time Pulse
+1 Minute]]>
+</Comment>
+<Comment Operand=".BEACON.2">
+<![CDATA[Support Functions
+[Global Application]
+Beacon
+Time Pulse
+1 Hour]]>
+</Comment>
+<Comment Operand=".CSSG[0].10">
+<![CDATA[PERMANENT 0 FOR COMISSIONING]]>
+</Comment>
+<Comment Operand=".CSSG[0].11">
+<![CDATA[PERMANENT 1 FOR COMISSIONING]]>
+</Comment>
+</Comments>
+<Data>19 00 4F 10 FB 3C 7D 5E 3E 6F E5 12 72 49 01 00 
+9C 33 00 00 00 08 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00</Data>
+<Data Format="Decorated">
+<Structure DataType="SUPPORT">
+<DataValueMember Name="Log1" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Log0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ini" DataType="BOOL" Value="0"/>
+<DataValueMember Name="_2xHz" DataType="BOOL" Value="1"/>
+<DataValueMember Name="_1xHz" DataType="BOOL" Value="1"/>
+<DataValueMember Name="_05Hz" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Step_1x30" DataType="INT" Radix="Decimal" Value="4175"/>
+<DataValueMember Name="Step_1x50" DataType="INT" Radix="Decimal" Value="15611"/>
+<DataValueMember Name="Step_1x100" DataType="INT" Radix="Decimal" Value="24189"/>
+<DataValueMember Name="Step_1x200" DataType="INT" Radix="Decimal" Value="28478"/>
+<DataValueMember Name="Step_1x500" DataType="INT" Radix="Decimal" Value="4837"/>
+<DataValueMember Name="Step_1x1000" DataType="INT" Radix="Decimal" Value="18802"/>
+<DataValueMember Name="Beacon" DataType="SINT" Radix="Decimal" Value="1"/>
+<DataValueMember Name="Watchdog" DataType="INT" Radix="Decimal" Value="13212"/>
+<ArrayMember Name="CSSG" DataType="DINT" Dimensions="5" Radix="Decimal">
+<Element Index="[0]" Value="2048"/>
+<Element Index="[1]" Value="0"/>
+<Element Index="[2]" Value="0"/>
+<Element Index="[3]" Value="0"/>
+<Element Index="[4]" Value="0"/>
+</ArrayMember>
+</Structure>
+</Data>
+</Tag>
+</Tags>
+<Programs Use="Context">
+<Program Use="Target" Name="P00_SUPPORT_FUNCTIONS" TestEdits="false" MainRoutineName="A00_COMMON" Disabled="false">
+<Tags>
+<Tag Name="APP_CNT" TagType="Base" DataType="DINT" Dimensions="20" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Comments>
+<Comment Operand="[0]">
+<![CDATA[Auxiliary Counter
+Rate: 10ms/Per Count
+[10 ms]]]>
+</Comment>
+<Comment Operand="[1]">
+<![CDATA[Auxiliary Counter
+Rate: 10ms/Per Count
+[20 ms]]]>
+</Comment>
+<Comment Operand="[2]">
+<![CDATA[Auxiliary Counter
+Rate: 10ms/Per Count
+[30 ms]]]>
+</Comment>
+<Comment Operand="[3]">
+<![CDATA[Auxiliary Counter
+Rate: 10ms/Per Count
+[40 ms]]]>
+</Comment>
+<Comment Operand="[4]">
+<![CDATA[Auxiliary Counter
+Rate: 10ms/Per Count
+[50 ms]]]>
+</Comment>
+<Comment Operand="[5]">
+<![CDATA[Auxiliary Counter
+Rate: 10ms/Per Count
+[100 ms]]]>
+</Comment>
+<Comment Operand="[6]">
+<![CDATA[Auxiliary Counter
+Rate: 10ms/Per Count
+[200 ms]]]>
+</Comment>
+<Comment Operand="[7]">
+<![CDATA[Auxiliary Counter
+Rate: 10ms/Per Count
+[300 ms]]]>
+</Comment>
+<Comment Operand="[8]">
+<![CDATA[Auxiliary Counter
+Rate: 10ms/Per Count
+[500 ms]]]>
+</Comment>
+<Comment Operand="[10]">
+<![CDATA[Auxiliary Counter
+Rate: 10ms/Per Count
+[1000 ms]]]>
+</Comment>
+<Comment Operand="[11]">
+<![CDATA[Auxiliary Counter
+Acc: 1Sec/Per Count]]>
+</Comment>
+<Comment Operand="[12]">
+<![CDATA[Auxiliary Counter
+Acc: 1Min/Per Count]]>
+</Comment>
+</Comments>
+<Data>20 00 00 00 93 3F 00 00 00 00 00 00 38 00 00 00 
+04 00 00 00 04 00 00 00 04 00 00 00 00 00 00 00 
+2C 00 00 00 00 00 00 00 2C 00 00 00 16 00 00 00 
+0E 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00</Data>
+<Data Format="Decorated">
+<Array DataType="DINT" Dimensions="20" Radix="Decimal">
+<Element Index="[0]" Value="32"/>
+<Element Index="[1]" Value="16275"/>
+<Element Index="[2]" Value="0"/>
+<Element Index="[3]" Value="56"/>
+<Element Index="[4]" Value="4"/>
+<Element Index="[5]" Value="4"/>
+<Element Index="[6]" Value="4"/>
+<Element Index="[7]" Value="0"/>
+<Element Index="[8]" Value="44"/>
+<Element Index="[9]" Value="0"/>
+<Element Index="[10]" Value="44"/>
+<Element Index="[11]" Value="22"/>
+<Element Index="[12]" Value="14"/>
+<Element Index="[13]" Value="0"/>
+<Element Index="[14]" Value="0"/>
+<Element Index="[15]" Value="0"/>
+<Element Index="[16]" Value="0"/>
+<Element Index="[17]" Value="0"/>
+<Element Index="[18]" Value="0"/>
+<Element Index="[19]" Value="0"/>
+</Array>
+</Data>
+</Tag>
+<Tag Name="APP_FLG" TagType="Base" DataType="DINT" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Comments>
+<Comment Operand=".0">
+<![CDATA[TICK PULSE
+[10 MSEC]]]>
+</Comment>
+<Comment Operand=".1">
+<![CDATA[TICK PULSE
+[20 MSEC]]]>
+</Comment>
+<Comment Operand=".2">
+<![CDATA[TICK PULSE
+[30 MSEC]]]>
+</Comment>
+<Comment Operand=".3">
+<![CDATA[TICK PULSE
+[40 MSEC]]]>
+</Comment>
+<Comment Operand=".4">
+<![CDATA[TICK PULSE
+[50 MSEC]]]>
+</Comment>
+<Comment Operand=".5">
+<![CDATA[TICK PULSE
+[100 MSEC]]]>
+</Comment>
+<Comment Operand=".6">
+<![CDATA[TICK PULSE
+[200 MSEC]]]>
+</Comment>
+<Comment Operand=".7">
+<![CDATA[TICK PULSE
+[300 MSEC]]]>
+</Comment>
+<Comment Operand=".8">
+<![CDATA[TICK PULSE
+[500 MSEC]]]>
+</Comment>
+<Comment Operand=".10">
+<![CDATA[TICK PULSE
+[1 SEC]]]>
+</Comment>
+<Comment Operand=".11">
+<![CDATA[TICK PULSE
+[1 MIN]]]>
+</Comment>
+<Comment Operand=".12">
+<![CDATA[TICK PULSE
+[1 HR]]]>
+</Comment>
+<Comment Operand=".30">
+<![CDATA[CLOCK READ
+ASSIGN FORMAT TO
+DATE AND TIME
+[PULSE]]]>
+</Comment>
+</Comments>
+<Data>04 00 00 80</Data>
+<Data Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="-2147483644"/>
+</Data>
+</Tag>
+<Tag Name="APP_ONS" TagType="Base" DataType="DINT" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data>0C 00 00 40</Data>
+<Data Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="1073741836"/>
+</Data>
+</Tag>
+<Tag Name="APP_TMR" TagType="Base" DataType="TIMER" Dimensions="30" Constant="false" ExternalAccess="Read/Write">
+<Comments>
+<Comment Operand="[0]">
+<![CDATA[Initialization Bit
+First Scan
+Pulse - Time Control
+[Delay]]]>
+</Comment>
+<Comment Operand="[1]">
+<![CDATA[Flash Timer
+Duty Cycle On
+[1 Sec]]]>
+</Comment>
+<Comment Operand="[2]">
+<![CDATA[Flash Timer
+Duty Cycle Off
+[1 Sec]]]>
+</Comment>
+<Comment Operand="[3]">
+<![CDATA[Flash Timer
+Duty Cycle On
+[2 Sec]]]>
+</Comment>
+<Comment Operand="[4]">
+<![CDATA[Flash Timer
+Duty Cycle Off
+[2 Sec]]]>
+</Comment>
+<Comment Operand="[5]">
+<![CDATA[Beacon
+Time Pulse
+1 Second
+[TIMER]]]>
+</Comment>
+<Comment Operand="[6]">
+<![CDATA[Beacon
+Time Pulse
+1 Minute
+[TIMER]]]>
+</Comment>
+<Comment Operand="[7]">
+<![CDATA[Beacon
+Time Pulse
+1 Hour
+[TIMER]]]>
+</Comment>
+<Comment Operand="[10]">
+<![CDATA[Flash Timer
+Duty Cycle On
+[0.5 Sec]]]>
+</Comment>
+<Comment Operand="[11]">
+<![CDATA[Flash Timer
+Duty Cycle Off
+[0.5 Sec]]]>
+</Comment>
+</Comments>
+<Data>84 4B 3D 00 E8 03 00 00 E8 03 00 00 84 4B 3D A0 
+E7 03 00 00 E8 03 00 00 84 4B 3D C0 E7 03 00 00 
+18 01 00 00 84 4B 3D C0 CF 07 00 00 6C 07 00 00 
+04 44 3D 00 CF 07 00 00 00 00 00 00 84 4B 3D 60 
+58 02 00 00 AE 01 00 00 84 4B 3D 00 58 02 00 00 
+58 02 00 00 84 4B 3D 00 58 02 00 00 58 02 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 84 4B 3D A0 F4 01 00 00 
+F4 01 00 00 84 4B 3D C0 F4 01 00 00 04 01 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00</Data>
+<Data Format="Decorated">
+<Array DataType="TIMER" Dimensions="30">
+<Element Index="[0]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="1000"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="1000"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[1]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="999"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="1000"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="1"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="1"/>
+</Structure>
+</Element>
+<Element Index="[2]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="999"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="280"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="1"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="1"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[3]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="1999"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="1900"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="1"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="1"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[4]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="1999"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[5]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="600"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="430"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="1"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="1"/>
+</Structure>
+</Element>
+<Element Index="[6]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="600"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="600"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[7]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="600"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="600"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[8]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[9]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[10]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="500"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="500"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="1"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="1"/>
+</Structure>
+</Element>
+<Element Index="[11]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="500"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="260"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="1"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="1"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[12]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[13]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[14]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[15]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[16]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[17]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[18]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[19]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[20]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[21]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[22]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[23]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[24]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[25]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[26]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[27]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[28]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[29]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+</Array>
+</Data>
+</Tag>
+<Tag Name="DT_COLON" TagType="Base" DataType="STRING" Constant="false" ExternalAccess="Read/Write">
+<Data>01 00 00 00 3A 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00</Data>
+<Data Format="String" Length="1">
+<![CDATA[':']]>
+</Data>
+</Tag>
+<Tag Name="DT_SLASH" TagType="Base" DataType="STRING" Constant="false" ExternalAccess="Read/Write">
+<Data>01 00 00 00 2F 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00</Data>
+<Data Format="String" Length="1">
+<![CDATA['/']]>
+</Data>
+</Tag>
+<Tag Name="DT_ZERO" TagType="Base" DataType="STRING" Constant="false" ExternalAccess="Read/Write">
+<Data>01 00 00 00 30 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00</Data>
+<Data Format="String" Length="1">
+<![CDATA['0']]>
+</Data>
+</Tag>
+<Tag Name="SIMULATION_ON" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[APPLICATION
+BASIC SIMULATION
+ENABLE
+MANUAL COMMAND]]>
+</Description>
+<Data>00</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+</Tags>
+<Routines>
+<Routine Name="A00_COMMON" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Comment>
+<![CDATA[************************************************************************************************************************************************************
+GLOBAL FUNCTIONS
+SUPERIMPOSED FUNCTIONS
+************************************************************************************************************************************************************]]>
+</Comment>
+<Text>
+<![CDATA[NOP();]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Text>
+<![CDATA[OTE(APP.Log1);]]>
+</Text>
+</Rung>
+<Rung Number="2" Type="N">
+<Text>
+<![CDATA[OTU(APP.Log0);]]>
+</Text>
+</Rung>
+<Rung Number="3" Type="N">
+<Comment>
+<![CDATA[INITIALIZATION BIT
+PULSE DURING FIRST SCAN
+__________________________________________________________________]]>
+</Comment>
+<Text>
+<![CDATA[[XIC(S:FS) TOF(APP_TMR[0],?,?) ,XIC(APP_TMR[0].DN) OTE(APP.Ini) ];]]>
+</Text>
+</Rung>
+<Rung Number="4" Type="N">
+<Comment>
+<![CDATA[FLASH BIT
+2 Hz CYCLE / 0.5 SEC CYCLE
+__________________________________________________________________]]>
+</Comment>
+<Text>
+<![CDATA[[XIO(APP_TMR[11].DN) TON(APP_TMR[10],?,?) ,XIC(APP_TMR[10].DN) TON(APP_TMR[11],?,?) ,XIC(APP_TMR[10].DN) OTE(APP._2xHz) ];]]>
+</Text>
+</Rung>
+<Rung Number="5" Type="N">
+<Comment>
+<![CDATA[FLASH BIT
+1 Hz CYCLE / 1 SEC CYCLE
+__________________________________________________________________]]>
+</Comment>
+<Text>
+<![CDATA[[XIO(APP_TMR[2].DN) TON(APP_TMR[1],?,?) ,XIC(APP_TMR[1].DN) TON(APP_TMR[2],?,?) ,XIC(APP_TMR[1].DN) OTE(APP._1xHz) ];]]>
+</Text>
+</Rung>
+<Rung Number="6" Type="N">
+<Comment>
+<![CDATA[FLASH BIT
+1/2 Hz CYCLE / 2 SEC CYCLE
+__________________________________________________________________]]>
+</Comment>
+<Text>
+<![CDATA[[XIO(APP_TMR[4].DN) TON(APP_TMR[3],?,?) ,XIC(APP_TMR[3].DN) TON(APP_TMR[4],?,?) ,XIC(APP_TMR[3].DN) OTE(APP._05Hz) ];]]>
+</Text>
+</Rung>
+<Rung Number="7" Type="N">
+<Text>
+<![CDATA[[ADD(APP_CNT[2],1,APP_CNT[2]) ADD(APP_CNT[4],1,APP_CNT[4]) ADD(APP_CNT[5],1,APP_CNT[5]) ADD(APP_CNT[6],1,APP_CNT[6]) ADD(APP_CNT[8],1,APP_CNT[8]) ADD(APP_CNT[10],1,APP_CNT[10]) ,XIC(APP.Ini) MOV(0,APP_CNT[2]) MOV(0,APP_CNT[4]) MOV(0,APP_CNT[5]) MOV(0,APP_CNT[6]) MOV(0,APP_CNT[8]) MOV(0,APP_CNT[10]) ,XIC(APP.Ini) MOV(0,APP.Step_1x30) MOV(0,APP.Step_1x50) MOV(0,APP.Step_1x100) MOV(0,APP.Step_1x200) MOV(0,APP.Step_1x500) MOV(0,APP.Step_1x1000) ];]]>
+</Text>
+</Rung>
+<Rung Number="8" Type="N">
+<Comment>
+<![CDATA[BASE COUNTER
+30 MILLISECONDS STEP
+__________________________________________________________________]]>
+</Comment>
+<Text>
+<![CDATA[[GEQ(APP_CNT[2],3) ONS(APP_ONS.2) OTE(APP_FLG.2) MOV(0,APP_CNT[2]) ,XIC(APP_FLG.2) ADD(APP.Step_1x30,1,APP.Step_1x30) ,GEQ(APP.Step_1x30,32767) MOV(0,APP.Step_1x30) ];]]>
+</Text>
+</Rung>
+<Rung Number="9" Type="N">
+<Comment>
+<![CDATA[BASE COUNTER
+50 MILLISECONDS STEP
+__________________________________________________________________]]>
+</Comment>
+<Text>
+<![CDATA[[GEQ(APP_CNT[4],5) ONS(APP_ONS.4) OTE(APP_FLG.4) MOV(0,APP_CNT[4]) ,XIC(APP_FLG.4) ADD(APP.Step_1x50,1,APP.Step_1x50) ,GEQ(APP.Step_1x50,32767) MOV(0,APP.Step_1x50) ];]]>
+</Text>
+</Rung>
+<Rung Number="10" Type="N">
+<Comment>
+<![CDATA[BASE COUNTER
+100 MILLISECONDS STEP
+__________________________________________________________________]]>
+</Comment>
+<Text>
+<![CDATA[[GEQ(APP_CNT[5],10) ONS(APP_ONS.5) OTE(APP_FLG.5) MOV(0,APP_CNT[5]) ,XIC(APP_FLG.5) ADD(APP.Step_1x100,1,APP.Step_1x100) ,GEQ(APP.Step_1x100,32767) MOV(0,APP.Step_1x100) ];]]>
+</Text>
+</Rung>
+<Rung Number="11" Type="N">
+<Comment>
+<![CDATA[BASE COUNTER
+200 MILLISECONDS STEP
+__________________________________________________________________]]>
+</Comment>
+<Text>
+<![CDATA[[GEQ(APP_CNT[6],20) ONS(APP_ONS.6) OTE(APP_FLG.6) MOV(0,APP_CNT[6]) ,XIC(APP_FLG.6) ADD(APP.Step_1x200,1,APP.Step_1x200) ,GEQ(APP.Step_1x200,32767) MOV(0,APP.Step_1x200) ];]]>
+</Text>
+</Rung>
+<Rung Number="12" Type="N">
+<Comment>
+<![CDATA[BASE COUNTER
+500 MILLISECONDS STEP
+__________________________________________________________________]]>
+</Comment>
+<Text>
+<![CDATA[[GEQ(APP_CNT[8],50) ONS(APP_ONS.8) OTE(APP_FLG.8) MOV(0,APP_CNT[8]) ,XIC(APP_FLG.8) ADD(APP.Step_1x500,1,APP.Step_1x500) ,GEQ(APP.Step_1x500,32767) MOV(0,APP.Step_1x500) ];]]>
+</Text>
+</Rung>
+<Rung Number="13" Type="N">
+<Comment>
+<![CDATA[BASE COUNTER
+1 SECOND STEP
+__________________________________________________________________]]>
+</Comment>
+<Text>
+<![CDATA[[GEQ(APP_CNT[10],100) ONS(APP_ONS.10) OTE(APP_FLG.10) MOV(0,APP_CNT[10]) ,XIC(APP_FLG.10) ADD(APP.Step_1x1000,1,APP.Step_1x1000) ,GEQ(APP.Step_1x1000,32767) MOV(0,APP.Step_1x1000) ];]]>
+</Text>
+</Rung>
+<Rung Number="14" Type="N">
+<Comment>
+<![CDATA[BEACON
+TIME PULSES
+[TRIGGERS]
+__________________________________________________________________]]>
+</Comment>
+<Text>
+<![CDATA[[XIC(APP_FLG.10) ADD(APP_CNT[11],1,APP_CNT[11]) ,GEQ(APP_CNT[11],60) ONS(APP_ONS.11) OTE(APP_FLG.11) MOV(0,APP_CNT[11]) ,XIC(APP_FLG.11) ADD(APP_CNT[12],1,APP_CNT[12]) ,GEQ(APP_CNT[12],60) ONS(APP_ONS.12) OTE(APP_FLG.12) MOV(0,APP_CNT[12]) ];]]>
+</Text>
+</Rung>
+<Rung Number="15" Type="N">
+<Comment>
+<![CDATA[BEACON
+TIME PULSES
+[EACH PULSE HAS 600 ms DURATION]
+__________________________________________________________________]]>
+</Comment>
+<Text>
+<![CDATA[[XIC(APP_FLG.10) TOF(APP_TMR[5],?,?) ,XIC(APP_TMR[5].DN) OTE(APP.Beacon.0) ];]]>
+</Text>
+</Rung>
+<Rung Number="16" Type="N">
+<Text>
+<![CDATA[[XIC(APP_FLG.11) TOF(APP_TMR[6],?,?) ,XIC(APP_TMR[6].DN) OTE(APP.Beacon.1) ];]]>
+</Text>
+</Rung>
+<Rung Number="17" Type="N">
+<Text>
+<![CDATA[[XIC(APP_FLG.12) TOF(APP_TMR[7],?,?) ,XIC(APP_TMR[7].DN) OTE(APP.Beacon.2) ];]]>
+</Text>
+</Rung>
+<Rung Number="18" Type="N">
+<Comment>
+<![CDATA[WATCHDOG COUNTER TO MONITOR COMMUNICATIONS BETWEEN 
+3rd PARTY AND CONTROLLER
+__________________________________________________________________]]>
+</Comment>
+<Text>
+<![CDATA[[ADD(APP.Watchdog,1,APP.Watchdog) ,GEQ(APP.Watchdog,32767) MOV(0,APP.Watchdog) ];]]>
+</Text>
+</Rung>
+<Rung Number="19" Type="N">
+<Comment>
+<![CDATA[DATE AND TIME
+BASED ON CONTROLLER CLOCK
+__________________________________________________________________]]>
+</Comment>
+<Text>
+<![CDATA[GSV(WallClockTime,,DateTime,PLC_CLK.YEAR);]]>
+</Text>
+</Rung>
+<Rung Number="20" Type="N">
+<Text>
+<![CDATA[XIC(APP.Beacon.0)XIO(APP.Ini)ONS(APP_ONS.30)[DTOS(PLC_CLK.YEAR,PLC_DTM.YEAR) DTOS(PLC_CLK.MONTH,PLC_DTM.MONTH) DTOS(PLC_CLK.DAY,PLC_DTM.DAY) ,DTOS(PLC_CLK.HOUR,PLC_DTM.HOUR) DTOS(PLC_CLK.MINUTE,PLC_DTM.MINUTE) DTOS(PLC_CLK.SECOUND,PLC_DTM.SECOND) ]OTE(APP_FLG.30);]]>
+</Text>
+</Rung>
+<Rung Number="21" Type="N">
+<Comment>
+<![CDATA[DATE AND TIME
+FORMATTED
+[MM/DD/YYYY]
+__________________________________________________________________]]>
+</Comment>
+<Text>
+<![CDATA[XIC(APP_FLG.30)XIO(APP.Ini)[COP(PLC_DTM.YEAR,PLC_DTM.FDATE,1) ,LES(PLC_CLK.MONTH,10) INSERT(DT_ZERO,PLC_DTM.MONTH,2,PLC_DTM.MONTH) ,LES(PLC_CLK.DAY,10) INSERT(DT_ZERO,PLC_DTM.DAY,2,PLC_DTM.DAY) ,CONCAT(PLC_DTM.FDATE,DT_SLASH,PLC_DTM.FDATE) CONCAT(PLC_DTM.FDATE,PLC_DTM.MONTH,PLC_DTM.FDATE) ,CONCAT(PLC_DTM.FDATE,DT_SLASH,PLC_DTM.FDATE) CONCAT(PLC_DTM.FDATE,PLC_DTM.DAY,PLC_DTM.FDATE) ];]]>
+</Text>
+</Rung>
+<Rung Number="22" Type="N">
+<Comment>
+<![CDATA[DATE AND TIME
+FORMATTED
+[HH:MM:SS]
+__________________________________________________________________]]>
+</Comment>
+<Text>
+<![CDATA[XIC(APP_FLG.30)XIO(APP.Ini)[COP(PLC_DTM.HOUR,PLC_DTM.FTIME,1) ,CONCAT(PLC_DTM.FTIME,DT_COLON,PLC_DTM.FTIME) CONCAT(PLC_DTM.FTIME,PLC_DTM.MINUTE,PLC_DTM.FTIME) ,CONCAT(PLC_DTM.FTIME,DT_COLON,PLC_DTM.FTIME) CONCAT(PLC_DTM.FTIME,PLC_DTM.SECOND,PLC_DTM.FTIME) ];]]>
+</Text>
+</Rung>
+<Rung Number="23" Type="N">
+<Comment>
+<![CDATA[SIMULATION MODE
+BASIC SIMULATION ACTIVE
+STATUS FLAG
+__________________________________________________________________]]>
+</Comment>
+<Text>
+<![CDATA[XIC(SIMULATION_ON)OTE(SIMULATION_ACTIVE);]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+</Routines>
+</Program>
+</Programs>
+<WallClockTime Use="Reference">
+</WallClockTime>
+</Controller>
+</RSLogix5000Content>
